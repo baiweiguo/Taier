@@ -30,6 +30,9 @@ export default defineConfig({
 		memo.entry('hivesql.worker').add(
 			'monaco-sql-languages/out/esm/hivesql/hivesql.worker.js',
 		);
+		memo.entry('flinksql.worker').add(
+			'monaco-sql-languages/out/esm/flinksql/flinksql.worker.js',
+		);
 		memo.plugin('monaco-editor').use(MonacoWebpackPlugin, [
 			{
 				languages: ['markdown', 'json'],
