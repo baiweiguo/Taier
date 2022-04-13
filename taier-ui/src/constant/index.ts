@@ -118,6 +118,9 @@ export enum TASK_TYPE_ENUM {
 	 * 虚节点
 	 */
 	VIRTUAL = -1,
+	/**
+	 * SparkSQL
+	 */
 	SPARK_SQL = 0,
 	SPARK = 1,
 	SYNC = 2,
@@ -348,9 +351,9 @@ export enum DATA_SYNC_MODE {
 }
 
 /**
- * 数据同步配置模式
+ * 任务模式枚举
  */
-export const DATA_SYNC_TYPE = {
+export const CREATE_MODEL_TYPE = {
 	/**
 	 * 向导模式
 	 */
@@ -359,6 +362,11 @@ export const DATA_SYNC_TYPE = {
 	 * 脚本模式
 	 */
 	SCRIPT: 1,
+	/**
+	 * 只有 FlinkSQL 支持 GRAPH
+	 * @deprecated
+	 */
+	GRAPH: 2,
 } as const;
 
 /**
@@ -1114,12 +1122,6 @@ export enum TASK_LANGUAGE {
 	SQL = 'sql',
 	JSON = 'json',
 }
-
-export const FLINK_SQL_TYPE = {
-	GUIDE: 0,
-	SCRIPT: 1,
-	GRAPH: 2,
-} as const;
 
 export const FLINK_VERSIONS = {
 	FLINK_1_12: '1.12',
